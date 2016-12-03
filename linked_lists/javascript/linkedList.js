@@ -56,8 +56,21 @@ function List() {
       }
       currentNode = null;
       this._length -= 1;
+    }
+  }
+
+  this.toArray = function() {
+    if (this._length === 0) {
+      return []
     } else {
-      return;
+      var result = [];
+      var currentNode = this.head;
+      while (currentNode.nextNode) {
+        result.push(currentNode.data);
+        currentNode = currentNode.nextNode;
+      }
+      result.push(currentNode.data);
+      return result;
     }
   }
 }
