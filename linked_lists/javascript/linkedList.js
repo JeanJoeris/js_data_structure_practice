@@ -73,4 +73,13 @@ function List() {
       return result;
     }
   }
+
+  this.lastNode = function() {
+    if (this._length === 0) {return null;}
+    var currentNode = this.head;
+    while (currentNode.nextNode) {
+      currentNode = currentNode.nextNode;
+    }
+    return currentNode;
+  }
 }
