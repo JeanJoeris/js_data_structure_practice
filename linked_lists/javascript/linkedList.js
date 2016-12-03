@@ -34,4 +34,26 @@ function List() {
     this._length -= 1;
     return result;
   }
+
+  this.delete = function(data) {
+    if (this._length === 1 && this.head.data === data) {
+      this.head = null;
+      this._length -= 1;
+    } else if (this._length > 1) {
+      var previousNode = this.head;
+      var currentNode = this.head;
+      while (currentNode.data !== data) {
+        previousNode = currentNode;
+        currentNode = currentNode.nextNode;
+        if (currentNode.nextNode === null && currentNode.data !== data) {
+          return;
+        }
+      }
+      previousNode.nextNode = currentNode.nextNode;
+      currentNode = null;
+      this._length -= 1;
+    } else {
+      return;
+    }
+  }
 }
