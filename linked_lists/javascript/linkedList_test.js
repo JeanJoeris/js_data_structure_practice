@@ -236,7 +236,7 @@ describe('LinkedList', function() {
       list.push('Spain');
     });
 
-    it.skip('should return true if node is in list', function(){
+    it('should return true if node is in list', function(){
       expect(list.include("rain")).to.eq(true);
     });
 

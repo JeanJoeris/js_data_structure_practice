@@ -82,4 +82,21 @@ function List() {
     }
     return currentNode;
   }
+
+  this.include = function(data) {
+    if (this._length === 0) {return false;}
+    var currentNode = this.head;
+    var result = null;
+    while(currentNode.data !== data) {
+      if (currentNode.data === data) {
+        result = data;
+      }
+      currentNode = currentNode.nextNode;
+    }
+    if (result) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
