@@ -49,7 +49,11 @@ function List() {
           return;
         }
       }
-      previousNode.nextNode = currentNode.nextNode;
+      if (currentNode === this.head) {
+        this.head = currentNode.nextNode;
+      } else {
+        previousNode.nextNode = currentNode.nextNode;
+      }
       currentNode = null;
       this._length -= 1;
     } else {
